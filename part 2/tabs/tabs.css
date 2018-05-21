@@ -1,0 +1,48 @@
+body {
+        
+            font-family: sans-serif;
+            background-color:aliceblue;
+        }
+        .container {
+            background: white;
+            margin: 35px auto;
+            padding: 1em;
+            width: 50%;
+        }
+        ul.tabs {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: dodgerblue;
+            width: 100%;
+            border:1px solid black;
+        }
+
+        ul.tabs li {
+            float: left;
+            width: 33.333333%;
+    
+        }
+        ul.tabs li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        ul.tabs li.active {
+            background-color: blue;
+        }
+        ul.tabs li.active a {
+            color: white;
+        }
+        .tabs-content {
+            clear: both;
+        }
+        .tabs-content div {
+            border: lightgray solid 1px;
+            padding: 0 20px;
+            text-align: justify;
+        }
+   

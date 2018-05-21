@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide Show</title>
+<meta charset="UTF-8">
+	<link href="styles/normalize.css" type="text/css" rel="stylesheet">
+	<link href="styles/slideShow.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+        $(document).ready(function () {
+            
+            $('#slideshow img:gt(0)').hide();
+	$('#header h1:gt(0), #header p:gt(0)').hide();
+
+	$('nav li a').click(function (event) {
+		var index = Number(event.currentTarget.id)-1; 
+
+		$('#header h1').fadeOut('slow');;
+		$('#header h1').eq(index).fadeIn('slow');
+		$('#header p').fadeOut('slow');
+		$('#header p').eq(index).fadeIn('slow');
+
+
+		$('#slideImages img').fadeOut('slow');
+		$('#slideImages img').eq(index).fadeIn('slow');
+	
+	
+	$('nav li a').css({'text-decoration': 'none'});
+	$('nav li').css({
+		'list-style': 'none',
+		'display': 'inline-block',
+		'margin': '0 5px 20px 0'
+	});
+	
+	$('nav li a').hover(function () {
+		$(this).addClass('navHover');
+	}, function () {
+		$(this).removeClass('navHover');
+	}); 
+	
+	
+
+	});
+});
+    </script>
+    
+    <style>
+        
+main {
+
+	width: 960px;
+	margin: 20px auto;
+	
+}
+
+#slideImages {
+	margin: 0 auto;
+	position: relative;
+}
+
+.container {
+
+	padding: 45px 25px 0px 25px; 
+	height: 680px;
+}
+
+.navHover {
+	color: darkblue;
+}
+
+nav {
+	position: relative;
+	top: 600px;
+}
+
+nav li a {
+	color: blueviolet;
+    float:right;
+}
+
+
+
+img {
+	max-width: 800px;
+	height: 600px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+#header {
+	height: 100px;
+	background-color: blanchedalmond;
+	
+}
+
+
+    </style>
+	
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<main>
+		
+		<div class="container">
+			<div id="slideImages">
+				<img src="images/slide3.jpg" alt="slideShow3">
+				<img src="images/slide5.jpg" alt="slideShow5">
+				<img src="images/slide1.jpg" alt="slideShow1">
+				<img src="images/slide4.jpg" alt="slideShow4">
+				<img src="images/slide2.jpg" alt="SlideShow2">
+				
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#" id="1">1</a></li>
+					<li><a href="#" id="2">2</a></li>
+					<li><a href="#" id="3">3</a></li>
+					<li><a href="#" id="4">4</a></li>
+					<li><a href="#" id="5">5</a></li>
+
+				</ul>
+			</nav>	
+			
+		</div>
+    </main>
+    </body>
+</html>

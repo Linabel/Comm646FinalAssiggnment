@@ -1,0 +1,49 @@
+
+main {
+
+	width: 960px;
+	margin: 20px auto;
+	
+}
+
+#slideImages {
+	margin: 0 auto;
+	position: relative;
+}
+
+.container {
+
+	padding: 45px 25px 0px 25px; 
+	height: 680px;
+}
+
+.navHover {
+	color: darkblue;
+}
+
+nav {
+	position: relative;
+	top: 600px;
+}
+
+nav li a {
+	color: blueviolet;
+    float:right;
+}
+
+
+
+img {
+	max-width: 800px;
+	height: 600px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+#header {
+	height: 100px;
+	background-color: blanchedalmond;
+	
+}
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>jQuery Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".accordion > a").on("click", function(){
+            if($(this).hasClass('active')){
+              $(this).removeClass("active");
+              $(this).siblings('.content').slideUp(250);
+              $(".accordion> a i").removeClass("fa-minus").addClass("fa-plus");
+            }else{
+              $(".accordion > a i").removeClass("fa-minus").addClass("fa-plus");
+            $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+            $(".accordion > a").removeClass("active");
+            $(this).addClass("active");
+            $('.content').slideUp(250);
+            $(this).siblings('.content').slideDown(250);
+            }
+
+          });
+        });
+    </script>
+    <style>
+        body{
+          background-color: white;
+          font-family: helvetica, sans-serif;
+           
+        }
+        
+        .container{
+          position: relative;
+          width: 700px;
+          height: auto;
+          margin: 50px auto;
+         border: 1px solid #665;
+
+        }
+        .accordion{
+          position: relative;
+          height: auto;
+          padding: 0px;
+          background-color: cornflowerblue;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .accordion > a{
+          display: block;
+          padding: 10px 15px;
+          text-decoration: none;
+          color: black;
+          font-weight: 600;
+          border-bottom: 1px solid #ddd;
+          -webkit-transition:all 0.2s linear;
+          -moz-transition:all 0.2s linear;
+          transition:all 0.2s linear;
+        }
+        .accordion > a i{
+          position:relative;
+          float: left;
+          margin-top:4px;
+          color: black;
+        }
+        .accordion > a.active{
+          background-color: mediumblue;
+          color: #fff;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            
+            
+        }
+        .accordion > a.active i{
+          color: #fff;
+        }
+        .content{
+          position:relative;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          border-bottom: 1px solid #ddd;
+          display:none;
+    
+        }
+        .content p{
+          padding: 10px 15px;
+          margin: 0;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+      <div class="accordion">
+        <a href="#">
+          About Us
+          <i class="fa fa-plus"></i>
+        </a>
+        <div class="content">
+          <p>San Diego Continuing Education (SDCE) is the adult education division of the San Diego Community College District (SDCCD). As the largest provider of noncredit education in California, SDCE's mission is to provide accessible, equitable, and innovative quality education and career training to adult students. SDCE has offered free career training and classes continuously for more than 100 years.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <a href="#">
+          Mission 
+          <i class="fa fa-plus"></i>
+        </a>
+        <div class="content">
+          <p> San Diego Continuing Education commits to student success and community enrichment by providing accessible, equitable, and innovative quality education and support services to diverse adult learners in pursuit of lifelong learning, training, career advancement, and pathways to college.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <a href="#">
+          Faculty and Staff
+          <i class="fa fa-plus"></i>
+        </a>
+        <div class="content">
+          <p>Faculty and staff are at the heart of SDCE. Each is dedicated to creating a supportive learning environment for student success. Faculty experts come from around the globe, bringing with them real-world diversity, experience and top academic credentials including Masters and Doctorate degrees. SDCE administrators, faculty and staff have thousands of years of combined experience in adult education. The commitment to organizational success and student achievement results in SDCE faculty and staff being recognized locally and nationally.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <a href="#">
+          Community Partnership
+          <i class="fa fa-plus"></i> 
+        </a>
+        <div class="content">
+          <p> SDCE works closely with the community to build a successful future for adults in San Diego. Collaborations and partnerships leverage resources, and make communities stronger. SDCE is proud to be part of a teamwork approach to building regional success and have many examples of leadership from organizations in San Diego. </p>
+        </div>
+      </div>
+    </div>
+<!--
+    
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".accordion > a").on("click", function(){
+            if($(this).hasClass('active')){
+              $(this).removeClass("active");
+              $(this).siblings('.content').slideUp(250);
+              $(".accordion> a i").removeClass("fa-minus").addClass("fa-plus");
+            }else{
+              $(".accordion > a i").removeClass("fa-minus").addClass("fa-plus");
+            $(this).find("i").removeClass("fa-plus").addClass("fa-minus");
+            $(".accordion > a").removeClass("active");
+            $(this).addClass("active");
+            $('.content').slideUp(250);
+            $(this).siblings('.content').slideDown(250);
+            }
+
+          });
+        });
+    </script>
+-->
+</body>
+</html>

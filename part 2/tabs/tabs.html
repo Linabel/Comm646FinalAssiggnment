@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Tabs with jQuery</title>
+       <link rel="stylesheet" type="text/css" href="tabs.css"> 
+</head>
+<body>
+    
+    <div class="container">
+        <ul class="tabs">
+            <li><a href="#tab1">Fun Fact 1</a></li>
+            <li><a href="#tab2">Fun Fact 2</a></li>
+            <li><a href="#tab3">Fun Fact 3</a></li>
+        </ul>
+        <div class="tabs-content">
+            <div id="tab1">
+                <h2>1. Vegetables Can Make You Tan</h2>
+              <p>Eating veggies has plenty of health benefits, but it also has cosmetic ones, according to researchers at Leeds University and the University at St. Andrews. They found that those who consumed vegetables with high levels of red and yellow pigments had a healthy yellow glow compared to those who did not. This is due to a process called “carotenoid colorization.” To find out more crazy celebrity facts like this one, check out these 50 Crazy Celebrity Facts You Won’t Believe Are True.</p>
+            </div>
+            <div id="tab2">
+                <h2>2. Bananas Can’t Reproduce</h2>
+                <p>Your favorite yellow fruit may have a, let’s say, suggestive shape. But as it happens, the Cavendish banana—the most popular variety of banana that fills supermarkets and sits at the Starbucks counter, is actually impotent. It’s a seedless hybrid of two (not as delicious) plant species. To create new bananas, the Cavendish don’t naturally reproduce, but require farmers to remove and transplant part of the plant’s stem. And for more wild info, check out The Craziest Fact About Every U.S. State.</p>
+            </div>
+            <div id="tab3">
+                <h2>15. Spicy Food Can Cut Down on Fat Intake</h2>
+              <p>Consuming spices has been found to help cut down on how much fat you take in. A study by researchers at Pennsylvania State University concluded that adding significant amounts of turmeric, black pepper, or cinnamon to a fatty meal impedes the amount of triglyceride (the bad fat that increases risk of heart disease) taken into the blood by as much as 30 percent.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+          $('ul.tabs li:first').addClass('active');
+          $('.tabs-content div').hide();
+          $('.tabs-content div:first').show();
+          $('ul.tabs li').on('click',function(){
+            $('ul.tabs li').removeClass('active');
+            $(this).addClass('active')
+            $('.tabs-content div').hide();
+            var activeTab = $(this).find('a').attr('href');
+            $(activeTab).show();
+            return false;
+          });
+        })
+    </script>
+</body>
+</html>
